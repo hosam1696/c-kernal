@@ -1,0 +1,11 @@
+{
+  "name": "cse",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "c:watch": "./reload.sh"
+  },
+  "author": "Hosam Elnabawy",
+  "license": "ISC"
+}
