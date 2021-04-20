@@ -2,8 +2,9 @@
   "name": "cse",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "one.c",
   "scripts": {
+    "start": "npm run c:watch",
     "c:watch": "./reload.sh"
   },
   "author": "Hosam Elnabawy",

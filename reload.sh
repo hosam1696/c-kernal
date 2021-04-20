@@ -10,7 +10,7 @@ echo "Start Watching file .. [" $myFile "]"
 
 while true
 do
-    sleep 3
+    sleep 2
     printf "\033c"
     gcc $myFile && ./a.out
 done
