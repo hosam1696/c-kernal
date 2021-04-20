@@ -5,13 +5,13 @@
 
 
 int proc_init(void) {
-    printk("Hello\n");
+    printk("(kernal1 Module): Initializing\n");
     return 0;
 } 
 
 
 void proc_exit(void) {
-    printk("GoodBye\n");
+    printk("(kernal1 Module): removing\n");
 }
 
 

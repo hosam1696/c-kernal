@@ -30,12 +30,12 @@ $ dmesg
 
 Add module to kernal
 ```bash
-$ insmod [file] 
+$ insmod [file].ko
 ```
 
 List modules in kernal
 ```bash
-$ lssmod 
+$ lsmod 
 ```
 
 Remove modules from kernal
