@@ -8,4 +8,4 @@ clear:
 	rm -rf *.o *.ko *.mod.* *.sysvers *.order .*.cmd
 
 test:
-	sudo dmesg -C
+	../test_mod.sh kernal1

@@ -51,3 +51,11 @@ $ rmmod
 
 __solution__
 > sudo apt install libelf-dev
+
+
+
+## WORK 
+
+1.  **kernal1**
+
+![](./screens/2.png)
