@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "",
   "main": "one.c",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hosam1696/c-kernal"
+  },
   "scripts": {
     "start": "npm run c:watch",
     "c:watch": "./reload.sh"
