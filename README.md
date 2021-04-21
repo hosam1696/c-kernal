@@ -59,3 +59,10 @@ __solution__
 1.  **kernal1**
 
 ![](./screens/2.png)
+
+
+1.  **Jiffies**
+
+![](./screens/3.png)
+
+![](./screens/4.png)

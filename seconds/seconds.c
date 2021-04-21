@@ -8,7 +8,7 @@
 // #include <sys/types.h>
 
 #define BUFFER_SIZE 128
-#define PROC_NAME "jiffies"
+#define PROC_NAME "seconds"
 
 unsigned long jf;
 int sec;
@@ -21,7 +21,6 @@ static struct file_operations proc_ops = {
 
 int proc_init(void)
 {
-    jf = jiffies;
     proc_create(PROC_NAME, 0666, NULL, &proc_ops);
     return 0;
 }
@@ -45,8 +44,8 @@ ssize_t proc_read(struct file *file, char __user *usr_buf, size_t count, loff_t 
 
     completed = 1;
     // jf = jiffies;
-    // rv = sprintf(buffer, "(Jiffies Log): Welcome To Jiffies Module\n");
-    rv = sprintf(buffer, "[Jiffies Log]: Welcome To Jiffies Module\nJiffies Number:%lu\n", jf);
+    rv = sprintf(buffer, "(Seconds Log): Welcome To Jiffies Module\n");
+
     copy_to_user(usr_buf, buffer, rv);
 
     return rv;
@@ -57,7 +56,7 @@ module_init(proc_init);
 module_exit(proc_exit);
 
 MODULE_LICENSE("MIT");
-MODULE_DESCRIPTION("(jiffies Module)");
+MODULE_DESCRIPTION("(Seconds Module)");
 MODULE_AUTHOR("HOSAM Elnabawy");
 
 
