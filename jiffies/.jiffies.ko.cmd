@@ -1,0 +1,1 @@
+cmd_/home/hosam/Desktop/cse/jiffies/jiffies.ko := ld -r -m elf_x86_64 -z max-page-size=0x200000 -T ./scripts/module-common.lds --build-id  -o /home/hosam/Desktop/cse/jiffies/jiffies.ko /home/hosam/Desktop/cse/jiffies/jiffies.o /home/hosam/Desktop/cse/jiffies/jiffies.mod.o ;  true
