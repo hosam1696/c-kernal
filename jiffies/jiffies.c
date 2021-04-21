@@ -46,7 +46,7 @@ ssize_t proc_read(struct file *file, char __user *usr_buf, size_t count, loff_t 
     completed = 1;
     // jf = jiffies;
     // rv = sprintf(buffer, "(Jiffies Log): Welcome To Jiffies Module\n");
-    rv = sprintf(buffer, "[Jiffies Log]: Welcome To Jiffies Module\nJiffies Number:%lu\n", jf);
+    rv = sprintf(buffer, "----------------------\n[Jiffies Log]: Welcome To Jiffies Module\nJiffies Number:%lu\n----------------------\n", jf);
     copy_to_user(usr_buf, buffer, rv);
 
     return rv;

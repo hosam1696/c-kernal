@@ -11,7 +11,7 @@
 #define PROC_NAME "seconds"
 
 unsigned long jf;
-int sec;
+int sec, hz;
 
 ssize_t proc_read(struct file *file, char __user *usr_buf, size_t count, loff_t *pos);
 
@@ -21,6 +21,8 @@ static struct file_operations proc_ops = {
 
 int proc_init(void)
 {
+    hz = HZ;
+    jf = jiffies;
     proc_create(PROC_NAME, 0666, NULL, &proc_ops);
     return 0;
 }
@@ -43,8 +45,8 @@ ssize_t proc_read(struct file *file, char __user *usr_buf, size_t count, loff_t 
     }
 
     completed = 1;
-    // jf = jiffies;
-    rv = sprintf(buffer, "(Seconds Log): Welcome To Seconds Module\n");
+
+    rv = sprintf(buffer, "----------------------\n(Seconds Module Log):\nHZ: %d\nJiffies: %lu\nSeconds: \n----------------------\n", hz, jf);
 
     copy_to_user(usr_buf, buffer, rv);
 
