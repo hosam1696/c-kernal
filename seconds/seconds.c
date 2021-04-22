@@ -46,7 +46,7 @@ ssize_t proc_read(struct file *file, char __user *usr_buf, size_t count, loff_t 
 
     completed = 1;
 
-    rv = sprintf(buffer, "----------------------\n(Seconds Module Log):\nHZ: %d\nJiffies: %lu\nSeconds: \n----------------------\n", hz, jf);
+    rv = sprintf(buffer, "----------------------\n(Seconds Module Log):\nHZ: %d\nJiffies: %lu\nSeconds: %lu\n----------------------\n", hz, jf, (jf / hz));
 
     copy_to_user(usr_buf, buffer, rv);
 
