@@ -1,7 +1,18 @@
-# Kernal 
+# ZAG CSE 3rd YEAR OPERATION SYSSTEM PROJECT 1 
 
 this file to index what i need for implementing the Kernal task
+
+
 <br>
+
+## Tasks
+
+1. Design a kernal module that create /proc/jiffies file that reports the current value of jiffies
+
+
+
+2. Design a kernal module taht creates a /proc/seconds that reports the time elapsed since the kernal was created in seconds
+
 
 ## Preparation
 
@@ -54,7 +65,7 @@ __solution__
 
 
 
-## WORK 
+## Screenshots & Work 
 
 1.  **kernal1**
 
