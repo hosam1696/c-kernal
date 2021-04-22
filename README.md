@@ -63,7 +63,34 @@ $ rmmod
 __solution__
 > sudo apt install libelf-dev
 
+<br>  
 
+## Helper Files
+
+- [**relaod.sh**](./reload.sh)
+
+automate building and running c files
+instead of every single change in the file i entered  `gcc -o [out] [file] && [out directory]`
+
+i simply run it prints the output of the file on the terminal
+usage `relaod [file]`
+
+
+
+
+![](./screens/5.png)
+
+- [**test_mod.sh**](./test_mod.sh)
+
+run several command in **Makefile** _test_ flag
+
+usage  `make test`
+
+
+![](./screens/6.png)
+
+
+<br>  
 
 ## Screenshots & Work 
 
