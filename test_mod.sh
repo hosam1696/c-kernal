@@ -13,7 +13,7 @@ if [ $2 ];
 echo \*\) Removing \`"$1"\` Module After 3 seconds
 sleep 3
 sudo rmmod "$1"
-sudo dmesg
+sudo dmesg 
 if [ $2 ];
     then
     cat /proc/"$2"

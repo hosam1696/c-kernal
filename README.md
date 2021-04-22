@@ -2,6 +2,8 @@
 
 this file to index what i need for implementing the Kernal task
 
+Github repo: [https://github.com/hosam1696/c-kernal](https://github.com/hosam1696/c-kernal)
+
 
 <br>
 

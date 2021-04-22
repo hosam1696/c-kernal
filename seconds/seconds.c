@@ -10,25 +10,27 @@
 #define BUFFER_SIZE 128
 #define PROC_NAME "seconds"
 
-unsigned long jf;
+unsigned long start_jf, end_jf, elapsed_time;
 int sec, hz;
 
 ssize_t proc_read(struct file *file, char __user *usr_buf, size_t count, loff_t *pos);
 
 static struct file_operations proc_ops = {
     .owner = THIS_MODULE,
-    .read = proc_read};
+    .read = proc_read
+    };
 
 int proc_init(void)
 {
     hz = HZ;
-    jf = jiffies;
+    start_jf = jiffies;
     proc_create(PROC_NAME, 0666, NULL, &proc_ops);
     return 0;
 }
 
 void proc_exit(void)
 {
+
     remove_proc_entry(PROC_NAME, NULL);
 }
 
@@ -37,7 +39,8 @@ ssize_t proc_read(struct file *file, char __user *usr_buf, size_t count, loff_t 
     int rv = 0;
     char buffer[BUFFER_SIZE];
     static int completed = 0;
-
+    end_jf = jiffies;
+    elapsed_time = end_jf - start_jf;
     if (completed)
     {
         completed = 0;
@@ -45,8 +48,8 @@ ssize_t proc_read(struct file *file, char __user *usr_buf, size_t count, loff_t 
     }
 
     completed = 1;
-
-    rv = sprintf(buffer, "----------------------\n(Seconds Module Log):\nHZ: %d\nJiffies: %lu\nSeconds: %lu\n----------------------\n", hz, jf, (jf / hz));
+    
+    rv = sprintf(buffer, "----------------------\n(Seconds Module Log):\nHZ: %d\nJiffies: %lu\nSeconds: %lu\n----------------------\n", hz, start_jf, (elapsed_time / hz));
 
     copy_to_user(usr_buf, buffer, rv);
 
